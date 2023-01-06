@@ -42,6 +42,9 @@ function IndexHeader() {
             <h1 className="h1-seo">Birth Asteroid</h1>
             <h3>find out which orbiting rock you have a connection with</h3>
           </div>
+          <div>
+            
+          </div>
           {/* <h6 className="category category-absolute">
             Designed by{" "}
             <a href="http://invisionapp.com/?ref=creativetim" target="_blank">
