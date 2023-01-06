@@ -34,7 +34,7 @@ export default function Dev8() {
                 minimumIntegerDigits: 2,
                 useGrouping: false
               })}`;
-            axios.get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${useDate}&end_date=${useDate}&api_key=${process.env.REACT_APP_NASA_KEY}`)
+            axios.get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${useDate}&end_date=${useDate}&api_key=${process.env.REACT_APP_NEW_NASA}`)
                 .then(response => {
                     setObjectName(response.data.near_earth_objects[`${useDate}`][0].name);
                     setDist(response.data.near_earth_objects[`${useDate}`][0].close_approach_data[0].miss_distance.miles);
