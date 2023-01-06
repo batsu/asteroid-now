@@ -19,8 +19,8 @@ import {
 // core components
 
 function Tabs() {
-  const [iconPills, setIconPills] = React.useState("1");
-  const [pills, setPills] = React.useState("1");
+  // const [iconPills, setIconPills] = React.useState("1");
+  // const [pills, setPills] = React.useState("1");
   return (
     <>
       <div className="section section-tabs">
@@ -88,7 +88,7 @@ function Tabs() {
                 <CardBody>
                   <TabContent
                     className="text-center"
-                    activeTab={"iconPills" + iconPills}
+                    activeTab={"iconPills" + 1}
                   >
                     <TabPane tabId="iconPills1">
                       <Dev8 />
