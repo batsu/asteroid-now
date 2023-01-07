@@ -53,7 +53,7 @@ export default function Dev8() {
 
     return (
         <div className="Div8">
-            <h1>What is your birth asteroid?</h1>
+            <h1>Select the date of your birth:</h1>
             <Calendar handleCalChange={handleCalChange} />
             <MakeMsg objectName={objectName} dist={dist} error={error} date={date} />
         </div>
