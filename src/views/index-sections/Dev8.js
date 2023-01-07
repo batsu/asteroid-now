@@ -16,6 +16,9 @@ export default function Dev8() {
     const [error, setError] = useState("")
     const [date, setDate] = useState("")
     const [dateArray, setDateArray] = useState(dayjs('2022-04-07').toArray())
+    const [url, setUrl] = useState("")
+    const [size, setSize] = useState("")
+    const [speed, setSpeed] = useState("")
 
     function handleCalChange(value) {
         setDateArray(value)
@@ -39,6 +42,12 @@ export default function Dev8() {
                     setObjectName(response.data.near_earth_objects[`${useDate}`][0].name);
                     setDist(response.data.near_earth_objects[`${useDate}`][0].close_approach_data[0].miss_distance.miles);
                     setDate(response.data.near_earth_objects[`${useDate}`][0].close_approach_data[0].close_approach_date_full);
+                    setUrl(response.data.near_earth_objects[`${useDate}`][0].nasa_jpl_url)
+                    const sizes = 
+                        (response.data.near_earth_objects[`${useDate}`][0].estimated_diameter.feet.estimated_diameter_max +
+                        response.data.near_earth_objects[`${useDate}`][0].estimated_diameter.feet.estimated_diameter_min) / 2
+                    setSize(sizes)
+                    setSpeed(response.data.near_earth_objects[`${useDate}`][0].close_approach_data[0].relative_velocity.miles_per_hour)
                 })
                 .catch(e => {
                     setError(e);
@@ -55,7 +64,15 @@ export default function Dev8() {
         <div className="Div8">
             <h1>Select the date of your birth:</h1>
             <Calendar handleCalChange={handleCalChange} />
-            <MakeMsg objectName={objectName} dist={dist} error={error} date={date} />
+            <MakeMsg 
+                objectName={objectName}
+                dist={dist}
+                error={error}
+                date={date}
+                url={url}
+                speed={speed}
+                size={size}
+            />
         </div>
     )
 }
